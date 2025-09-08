@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Etch A Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="crt">
+    <div class="frame">
+        <div class="header">
+          <h1>Magic Etch A Sketch</h1>
+        </div>
+    
+        <div class="main">
+          <div id="container"></div>
+        </div>
+    
+        <div class="utilBox">
+          <div class="btnBox">
+            <button id="drawBtn">DRAW</button>
+            <button id="eraseBtn">ERASE</button>
+          </div>
+    
+          <div class="gridControl">
+            <label for="gridSize">
+              Grid Size:
+              <span id="gridSizeValue">16 x 16</span>
+            </label>
+            <input type="range" id="gridSize" min="2" max="100" value="16" />
+          </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

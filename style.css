@@ -1,0 +1,109 @@
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+  100% {
+    opacity: 1;
+  }
+} 
+
+/* Layout */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fffffe;
+  margin: 0;
+  padding: 0;
+}
+.frame{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  background: red;
+  width: 100vh;
+  border-radius: 25px;
+}
+.header {
+  text-align: center;
+  color: #fffffe;
+
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: 90vw;
+  max-width: 640px;
+  max-height: 640px;
+  border: 1px solid #fffffe;
+  background-color: #fffffe;
+}
+
+.square {
+  border: 1px solid #999b9923;
+  box-sizing: border-box;
+}
+
+.colored {
+  background-color: #44444E;
+}
+
+.no-borders .square {
+  border: none;
+}
+
+/* Controls */
+.utilBox {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnBox {
+  width: 90vw;
+  max-width: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btnBox button {
+  flex: 1;
+  border-radius: 20px;
+  padding: 15px;
+  background: #EA2F14;
+  color: #fffffe;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnBox button:hover{
+  background: #DC2525;
+}
+.btnBox button.active {
+  background: #DC2525;
+  font-weight: bold;
+}
+
+.gridControl {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  color: #fffffe;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  width: 90vw;
+  max-width: 640px;
+}
+
