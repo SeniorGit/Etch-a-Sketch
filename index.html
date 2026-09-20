@@ -3,34 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magic Etch A Sketch</title>
+    <title>Etch A Sketch - Magic Screen</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
-  <body class="crt">
-    <div class="frame">
-        <div class="header">
-          <h1>Magic Etch A Sketch</h1>
+  <body>
+    <main class="frame" id="frame">
+      <header class="masthead">
+        <h1>Etch A Sketch</h1>
+        <p>Magic Screen</p>
+      </header>
+
+      <div
+        class="screen"
+        id="screen"
+        role="group"
+        aria-label="Drawing screen"
+        aria-describedby="screenHint"
+        tabindex="0"
+      >
+        <div class="board" id="board"></div>
+        <div class="stylus" id="stylus" aria-hidden="true"></div>
+      </div>
+      <p class="sr-only" id="screenHint">
+        Draw with a mouse or finger, or turn the knobs: the left knob moves the
+        stylus across, the right knob moves it up and down. With a keyboard,
+        focus the screen and use the arrow keys.
+      </p>
+
+      <div class="knob knob-x">
+        <div
+          class="knob-well"
+          id="knobX"
+          role="slider"
+          tabindex="0"
+          aria-label="Left knob, moves the stylus across"
+          aria-orientation="horizontal"
+        >
+          <div class="knob-dial"></div>
         </div>
-    
-        <div class="main">
-          <div id="container"></div>
-        </div>
-    
-        <div class="utilBox">
-          <div class="btnBox">
-            <button id="drawBtn">DRAW</button>
-            <button id="eraseBtn">ERASE</button>
+        <span class="knob-label" aria-hidden="true">Across</span>
+      </div>
+
+      <div class="controls" role="group" aria-label="Controls">
+        <div class="controls-grid">
+          <div class="control">
+            <span class="control-label" id="stylusLabel">Stylus</span>
+            <div class="tool-pair" role="group" aria-labelledby="stylusLabel">
+              <button type="button" class="key" id="drawBtn" aria-pressed="true">Draw</button>
+              <button type="button" class="key" id="eraseBtn" aria-pressed="false">Erase</button>
+            </div>
           </div>
-    
-          <div class="gridControl">
-            <label for="gridSize">
-              Grid Size:
-              <span id="gridSizeValue">16 x 16</span>
-            </label>
-            <input type="range" id="gridSize" min="2" max="100" value="16" />
+
+          <div class="control">
+            <div class="control-label">
+              <label for="gridSize">Grid</label>
+              <output id="gridSizeValue" for="gridSize">32 &times; 24</output>
+            </div>
+            <input type="range" id="gridSize" min="8" max="100" value="32" />
           </div>
+
+          <button type="button" class="key control-wide" id="clearBtn">Shake to clear</button>
         </div>
-    </div>
-    <script src="main.js"></script>
+      </div>
+
+      <div class="knob knob-y">
+        <div
+          class="knob-well"
+          id="knobY"
+          role="slider"
+          tabindex="0"
+          aria-label="Right knob, moves the stylus up and down"
+          aria-orientation="vertical"
+        >
+          <div class="knob-dial"></div>
+        </div>
+        <span class="knob-label" aria-hidden="true">Up &amp; down</span>
+      </div>
+    </main>
   </body>
 </html>
